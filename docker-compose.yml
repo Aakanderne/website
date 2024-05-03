@@ -1,0 +1,13 @@
+name: 'aakanderne'
+
+services:
+  database:
+    image: mysql:8.0.36
+    container_name: aakanderne_database
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: aakanderne
+      MYSQL_USER: aakanderne
+      MYSQL_PASSWORD: aakanderne
+    ports:
+      - '13306:3306'
