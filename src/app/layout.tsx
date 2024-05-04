@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import { cn } from '~/lib/utils';
 import { ThemeProvider } from '~/components/theme-provider';
 import '~/styles/globals.css';
+import { Toaster } from '~/components/ui/sonner';
 
 const fontSans = FontSans({ subsets: ['latin'], variable: '--font-sans' });
 const fontHeading = localFont({
@@ -30,6 +31,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
