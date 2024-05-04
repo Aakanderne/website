@@ -17,9 +17,10 @@ export default function RootLayout({
 }: Readonly<PropsWithChildren>): JSX.Element {
   return (
     <html lang="da" suppressHydrationWarning>
+      <head />
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          'flex min-h-screen flex-col bg-background font-sans antialiased',
           fontSans.variable,
           fontHeading.variable,
         )}
