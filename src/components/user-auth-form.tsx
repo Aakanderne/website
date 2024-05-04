@@ -60,7 +60,8 @@ export function UserAuthForm({
 
   return (
     <div className={cn('grid gap-6', className)} {...props}>
-      <form onSubmit={void handleSubmit(onSubmit)}>
+      {/* eslint-disable-next-line @typescript-eslint/no-misused-promises -- Not misused */}
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-2">
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="email">

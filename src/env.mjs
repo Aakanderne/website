@@ -10,9 +10,13 @@ export const env = createEnv({
     RESEND_FROM_EMAIL: z.string().email(),
     STRIPE_API_KEY: z.string().min(1),
     STRIPE_WEBHOOK_SECRET: z.string().min(1),
+    STRIPE_MEMBER_PRODUCT_PRICE_ID: z.string().min(1),
+    NEXTAUTH_URL: z.string().url().default('http://localhost:3000'),
+    NEXTAUTH_SECRET: z.string().min(1),
   },
   shared: {
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().min(1),
+    NEXT_PUBLIC_APP_URL: z.string().url().default('http://localhost:3000'),
   },
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
@@ -22,6 +26,10 @@ export const env = createEnv({
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:
       process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    STRIPE_MEMBER_PRODUCT_PRICE_ID: process.env.STRIPE_MEMBER_PRODUCT_PRICE_ID,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
   },
   extends: [vercel()],
 });
