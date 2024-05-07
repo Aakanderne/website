@@ -7,7 +7,7 @@ export default function MainLayout({
   return (
     <>
       <Header navItems={[{ href: '/medlem', title: 'Medlemskab' }]} />
-      {children}
+      <main className="flex grow flex-col">{children}</main>
     </>
   );
 }
