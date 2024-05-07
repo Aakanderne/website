@@ -23,7 +23,11 @@ export default async function MainPage(): Promise<JSX.Element> {
       <About />
       <section className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-4 px-5 py-10 sm:grid-cols-2">
         {classes.map((product) => (
-          <Link key={product.id} href={`/classes/${product.id}`}>
+          <Link
+            key={product.id}
+            href={`/classes/${product.id}`}
+            className="overflow-hidden rounded-lg"
+          >
             <article className="relative">
               {product.metadata.image ? (
                 <div className="-z-10">
