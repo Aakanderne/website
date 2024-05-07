@@ -36,7 +36,7 @@ export default async function MainPage(): Promise<JSX.Element> {
                   />
                 </div>
               ) : null}
-              <div className="absolute inset-0 flex flex-col items-center justify-end space-y-2 bg-gradient-to-t from-black to-transparent pb-2 text-white">
+              <div className="absolute inset-0 flex flex-col items-center justify-end space-y-2 bg-gradient-to-t from-[#00000088] to-[#ffffff44] pb-2 text-white">
                 <h2 className="text-2xl font-semibold">{product.name}</h2>
               </div>
             </article>

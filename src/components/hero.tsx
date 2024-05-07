@@ -26,7 +26,7 @@ export function Hero({
           className="object-cover"
         />
       </div>
-      <div className="relative flex size-full flex-col items-center justify-end space-y-10 bg-gradient-to-t from-black to-transparent pb-10 text-white">
+      <div className="relative flex size-full flex-col items-center justify-end space-y-10 bg-gradient-to-t from-[#00000088] to-[#ffffff44] pb-10 text-white">
         <Icons.Logo className="size-32" />
         <h1 className={cn(typographyVariants({ variant: 'h1' }))}>
           Velkommen til Åkanderne
