@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import type { User } from 'next-auth';
+import type { User as AuthUser } from 'next-auth';
 import { signOut } from 'next-auth/react';
 import {
   DropdownMenu,
@@ -12,11 +12,16 @@ import {
 } from '~/components/ui/dropdown-menu';
 import { UserAvatar } from '~/components/user-avatar';
 
+type User = Pick<AuthUser, 'name' | 'image' | 'email'> & { isAdmin: boolean };
+
 interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
-  user: Pick<User, 'name' | 'image' | 'email'> & { isAdmin: boolean };
+  user: User | null;
 }
 
-export function UserAccountNav({ user }: UserAccountNavProps): JSX.Element {
+export function UserAccountNav({ user }: UserAccountNavProps): JSX.Element | null {
+  if (!user) {
+    return null
+  }
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>

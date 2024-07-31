@@ -14,12 +14,12 @@ export async function Header({ navItems }: HeaderProps): Promise<JSX.Element> {
       <div className="container flex h-16 items-center justify-between py-4">
         <MainNav items={navItems} />
         <UserAccountNav
-          user={{
-            email: user?.email,
-            image: user?.image,
-            name: user?.name,
-            isAdmin: user?.email?.endsWith('@aakanderne.dk') ?? false,
-          }}
+          user={user ? {
+            email: user.email,
+            image: user.image,
+            name: user.name,
+            isAdmin: user.email?.endsWith('@aakanderne.dk') ?? false,
+          } : null}
         />
       </div>
     </header>
